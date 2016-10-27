@@ -1,10 +1,11 @@
-#include<iostream>
-
+#include <iostream>
+#include "Game.h"
 
 using namespace std;
 
 int main()
 {
+	Game game;
 
 	cin.get();
 	cin.get();
