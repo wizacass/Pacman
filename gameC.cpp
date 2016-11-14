@@ -2,8 +2,6 @@
 
 Game::Game()
 {
-    std::cout << "Chello! Cyka" << std::endl;
-
 	this->_GameStart();
 	this->_GameLoop();
 	this->_GameEnd();
@@ -28,7 +26,13 @@ void Game::_GameLoop()
 {
 	while (this->_isWorking)
 	{
-		this->_isWorking = false;
+        system("cls");
+        level->SetPac(pacman->getX(), pacman->getY());
+        pacman->Input();
+        pacman->Movement();
+        pacman->Update();
+        level->Draw();
+        system("timeout 1");
 	}
 }
 

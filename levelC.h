@@ -16,8 +16,9 @@ public:
 		char content;
 	};
 
+	void SetPac(int x, int y);
 	void Draw();
-	Field GetBoard();
+
 private:
 
 	std::string _name;

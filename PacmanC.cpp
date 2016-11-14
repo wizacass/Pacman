@@ -6,11 +6,67 @@ Pacman::Pacman(int x, int y) :
     _y(y),
     _x(x)
 {
+    this->_dir = STOP;
+    this->_xx = 0;
+    this->_yy = 0;
     std::cout << "Hello! Swagman\n";
-    pac = 'C';
 }
 
 Pacman::~Pacman()
 {
     std::cout << "Goodbye! Swagman\n";
+}
+
+void Pacman::Input()
+{
+    if(_kbhit())
+    {
+        switch(_getch())
+        {
+        case 'w':
+            this->_dir = UP;
+            break;
+        case 'a':
+            this->_dir = LEFT;
+            break;
+        case 's':
+            this->_dir = DOWN;
+            break;
+        case 'd':
+            this->_dir = RIGHT;
+            break;
+        //debug
+        case 'x':
+            this->_dir = STOP;
+            break;
+        }
+    }
+}
+
+void Pacman::Movement()
+{
+    switch (this->_dir)
+    {
+    case STOP:
+        this->_xx = 0;
+        this->_yy = 0;
+    case UP:
+        this->_xx++;
+        this->_yy = 0;
+    case DOWN:
+        this->_xx--;
+        this->_yy = 0;
+    case RIGHT:
+        this->_xx = 0;
+        this->_yy++;
+    case LEFT:
+        this->_xx = 0;
+        this->_yy--;
+    }
+}
+
+void Pacman::Update()
+{
+    this->_x += this->_xx;
+    this->_y += this->_yy;
 }

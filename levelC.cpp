@@ -7,12 +7,20 @@ Level::Level(std::string name)
 	std::cout << "Hello! Level" << std::endl;
 
 	this->_GetLevelInfo();
+	//TO DO: delete draw in constructor
 	Draw();
 }
 
 Level::~Level()
 {
 	std::cout << "Bye! Level" << std::endl;
+}
+
+void Level::SetPac(int x, int y)
+{
+    this->_board[x][y].content = 'C';
+    //TODO: add sdjkfhsejk WEEE NEED FUCKING GLOBALS -Pilis
+
 }
 
 void Level::Draw()
@@ -26,11 +34,6 @@ void Level::Draw()
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;
-}
-
-Field Level::GetBoard()
-{
-    return this->_board;
 }
 
 void Level::_GetLevelInfo()

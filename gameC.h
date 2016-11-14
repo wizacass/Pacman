@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <stdlib.h>
 #include "LevelC.h"
 #include "PacmanC.h"
 
