@@ -1,17 +1,27 @@
 #include "Level.h"
 
-Level::Level(std::string name) :
-_name(name)
+Level::Level(std::string name)
 {
-	std::cout << "Hello!" << std::endl;
+	this->_name = name + ".txt";
+
+	std::cout << "Hello! Level" << std::endl;
 
 	this->_GetLevelInfo();
-	Draw();
 }
 
 Level::~Level()
 {
-	std::cout << "Bye!" << std::endl;
+	std::cout << "Bye! Level" << std::endl;
+}
+
+void Level::SetPac(int x, int y)
+{
+	this->_board[x][y].content = 'C';
+}
+
+void Level::SetTile(Field f)
+{
+	this->_board[f.x][f.y].content = f.content;
 }
 
 void Level::Draw()
@@ -29,7 +39,8 @@ void Level::Draw()
 
 void Level::_GetLevelInfo()
 {
-	std::ifstream src(this->_name + ".txt");
+	std::ifstream src(this->_name);
+	//std::ifstream src("Level1.txt");
 
 	for (int i = 0; i < 20; i++)
 	{
@@ -37,10 +48,13 @@ void Level::_GetLevelInfo()
 		{
 			this->_board[i][j].x = i;
 			this->_board[i][j].y = j;
-			
+
 			src >> this->_board[i][j].content;
 		}
 	}
 
 	src.close();
 }
+
+
+
