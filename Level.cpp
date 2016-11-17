@@ -19,9 +19,9 @@ void Level::SetPac(int x, int y)
 	this->_board[x][y].content = 'C';
 }
 
-void Level::SetTile(Field f)
+void Level::SetTile(int x, int y)
 {
-	this->_board[f.x][f.y].content = f.content;
+	this->_board[x][y].content = ' ';
 }
 
 void Level::Draw()

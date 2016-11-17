@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "Level.h"
 #include "Pacman.h"
+#include "Globals.h"
 
 class Game
 {
@@ -17,7 +18,7 @@ public:
 private:
 	bool _isWorking;
 
-	int _score;
+	int _Score;
 
 	void _GameStart();
 	void _GameLoop();

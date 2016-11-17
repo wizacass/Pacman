@@ -12,7 +12,7 @@ public:
 	~Level();
 
 	void SetPac(int x, int y);
-	void SetTile(Field f);
+	void SetTile(int x, int y);
 	void Draw();
 
 private:

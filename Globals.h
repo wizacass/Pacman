@@ -1,5 +1,7 @@
 #pragma once
 
+	//int Score;
+
 	struct Field
 	{
 		int x, y;

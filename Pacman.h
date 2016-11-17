@@ -10,6 +10,9 @@ public:
 	Pacman(int x, int y);
 	~Pacman();
 
+	int pX;
+	int pY;
+
 	void Input();
 	void Movement();
 	void Update();
