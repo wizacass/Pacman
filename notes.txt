@@ -2,7 +2,7 @@ PacMan
 
 Board[30][20]
 	Field: x, y, cont;
-	cont: # = Wall, + = Food;
+	cont: '#' = Wall, '+' = Food;
 	collision detection;
 
 Pacman
@@ -12,3 +12,26 @@ Pacman
 	isDraw at x, y;
 
 GameLoop
+
+
+BUG #1:
+	>Pacman still spans 2 tiles
+	>When changing direction, 'C' still stays on teh edge
+	>UPDATE:
+		>Trail fixed
+		>Direction bug still persists
+
+BUG #2:
+	>When Pac goes out of bounds, game crashes
+
+General notes about optimization:
+	in Pacman:
+	 >It's possible to merge Input and Movement methods and get rid of direction enum.
+	in Game:
+	 >Updates could be merged into one
+
+
+TODO:
+	>Collisions
+	>Update Score
+	>Get level by size and create corresponding array
