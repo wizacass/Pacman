@@ -6,7 +6,7 @@ Pacman::Pacman(int x, int y) :
     _y(y),
     _x(x)
 {
-    this->_dir = STOP;
+    this->_dir = GLOBALS::STOP;
     this->_xx = 0;
     this->_yy = 0;
     std::cout << "Hello! Swagman\n";
@@ -24,20 +24,20 @@ void Pacman::Input()
         switch(_getch())
         {
         case 'w':
-            this->_dir = UP;
+            this->_dir = GLOBALS::UP;
             break;
         case 'a':
-            this->_dir = LEFT;
+            this->_dir = GLOBALS::LEFT;
             break;
         case 's':
-            this->_dir = DOWN;
+            this->_dir = GLOBALS::DOWN;
             break;
         case 'd':
-            this->_dir = RIGHT;
+            this->_dir = GLOBALS::RIGHT;
             break;
         //debug
         case 'x':
-            this->_dir = STOP;
+            this->_dir = GLOBALS::STOP;
             break;
         }
     }
@@ -47,21 +47,26 @@ void Pacman::Movement()
 {
     switch (this->_dir)
     {
-    case STOP:
+    case GLOBALS::STOP:
         this->_xx = 0;
         this->_yy = 0;
-    case UP:
-        this->_xx++;
+        break;
+    case GLOBALS::UP:
+        this->_xx = -1;
         this->_yy = 0;
-    case DOWN:
-        this->_xx--;
+        break;
+    case GLOBALS::DOWN:
+        this->_xx = 1;
         this->_yy = 0;
-    case RIGHT:
+        break;
+    case GLOBALS::RIGHT:
         this->_xx = 0;
-        this->_yy++;
-    case LEFT:
+        this->_yy = 1;
+        break;
+    case GLOBALS::LEFT:
         this->_xx = 0;
-        this->_yy--;
+        this->_yy = -1;
+        break;
     }
 }
 

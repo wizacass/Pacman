@@ -2,6 +2,8 @@
 
 Game::Game()
 {
+    this->_isWorking = true;
+
 	this->_GameStart();
 	this->_GameLoop();
 	this->_GameEnd();
@@ -9,7 +11,7 @@ Game::Game()
 
 Game::~Game()
 {
-	std::cout << "Bye! Cyka" << std::endl;
+	std::cout << "Bye!" << std::endl;
 
 	delete level;
 }
@@ -30,7 +32,7 @@ void Game::_GameLoop()
         level->SetPac(pacman->getX(), pacman->getY());
         pacman->Input();
         pacman->Movement();
-        pacman->Update();
+        this->_Update();
         level->Draw();
         system("timeout 1");
 	}
@@ -39,4 +41,9 @@ void Game::_GameLoop()
 void Game::_GameEnd()
 {
 	std::cout << "Game Over!" << std::endl;
+}
+
+void Game::Update()
+{
+    pacman->Update();
 }

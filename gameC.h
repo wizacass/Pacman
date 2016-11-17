@@ -15,11 +15,10 @@ public:
 	Pacman *pacman;
 
 private:
-	bool _isWorking = true;
+	bool _isWorking;
 
 	void _GameStart();
 	void _GameLoop();
 	void _GameEnd();
-
-
+	void _Update();
 };
