@@ -15,6 +15,7 @@ public:
 
 	void Input();
 	void Movement();
+	void Check();
 	void Update();
 
 	inline int getX() { return this->_x; };

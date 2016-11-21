@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "Pacman.h"
 
 Pacman::Pacman(int x, int y) :
@@ -84,8 +83,16 @@ void Pacman::Movement()
 	}
 }
 
+void Pacman::Check()
+{
+
+}
+
 void Pacman::Update()
 {
+	pX = this->_x;
+	pY = this->_y;
+
 	this->_x += this->_xx;
 	this->_y += this->_yy;
 }

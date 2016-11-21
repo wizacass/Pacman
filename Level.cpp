@@ -14,12 +14,13 @@ Level::~Level()
 	std::cout << "Bye! Level" << std::endl;
 }
 
+//SetPac and ClearTile could be merged
 void Level::SetPac(int x, int y)
 {
 	this->_board[x][y].content = 'C';
 }
 
-void Level::SetTile(int x, int y)
+void Level::ClearTile(int x, int y)
 {
 	this->_board[x][y].content = ' ';
 }
@@ -35,6 +36,11 @@ void Level::Draw()
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;
+}
+
+char Level::GetContent(int x, int y)
+{
+	return this->_board[x][y].content;
 }
 
 void Level::_GetLevelInfo()

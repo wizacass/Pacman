@@ -12,8 +12,10 @@ public:
 	~Level();
 
 	void SetPac(int x, int y);
-	void SetTile(int x, int y);
+	void ClearTile(int x, int y);
 	void Draw();
+
+	char GetContent(int x, int y);
 
 private:
 	std::string _name;
