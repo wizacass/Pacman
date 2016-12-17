@@ -24,4 +24,3 @@ private:
 	int _xx, _yy;
 	DIRECTION _dir;
 };
-

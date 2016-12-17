@@ -39,7 +39,6 @@ void Game::_GameLoop()
 
 		pacman->Input();
 		pacman->Movement();
-		level->ClearTile(pacman->getX(), pacman->getY());
 		level->SetPac(pacman->getX(), pacman->getY(), this->_score);
 
 		this->_Update();
@@ -59,4 +58,3 @@ void Game::_Update()
 {
 	pacman->Update();
 }
-

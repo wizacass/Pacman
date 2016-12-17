@@ -28,4 +28,3 @@ private:
 	void _GameEnd();
 	void _Update();
 };
-

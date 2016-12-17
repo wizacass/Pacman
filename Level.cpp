@@ -20,11 +20,6 @@ void Level::SetPac(int x, int y, int & score)
 	if(this->_board[x][y].content == '+')
 		score++;
 
-	this->_board[x][y].content = 'C';
-}
-
-void Level::ClearTile(int x, int y)
-{
 	if (this->_board[x - 1][y].content == 'C')
 		this->_board[x - 1][y].content = ' ';
 	if (this->_board[x + 1][y].content == 'C')
@@ -33,6 +28,8 @@ void Level::ClearTile(int x, int y)
 		this->_board[x][y - 1].content = ' ';
 	if (this->_board[x][y + 1].content == 'C')
 		this->_board[x][y + 1].content = ' ';
+
+	this->_board[x][y].content = 'C';
 }
 
 void Level::Draw()
@@ -71,6 +68,3 @@ void Level::_GetLevelInfo()
 
 	src.close();
 }
-
-
-

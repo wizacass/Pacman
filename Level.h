@@ -12,7 +12,6 @@ public:
 	~Level();
 
 	void SetPac(int x, int y, int & score);
-	void ClearTile(int x, int y);
 	void Draw();
 
 	char GetContent(int x, int y);
@@ -23,5 +22,3 @@ private:
 
 	void _GetLevelInfo();
 };
-
-
