@@ -19,7 +19,7 @@ public:
 private:
 	bool _isWorking;
 
-	int _Score;
+	int _score;
 	
 	Field _field;
 

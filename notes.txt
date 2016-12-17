@@ -14,7 +14,9 @@ Pacman
 GameLoop
 
 
-BUG #1:
+--//-- BUG LOG --//--
+
+BUG #1: [FIXED]
 	>Pacman still spans 2 tiles
 	>When changing direction, 'C' still stays on teh edge
 	>UPDATE:
@@ -23,6 +25,9 @@ BUG #1:
 
 BUG #2:
 	>When Pac goes out of bounds, game crashes
+		>To be fixed with Collision
+
+--//-- BUG LOG --//--
 
 General notes about optimization:
 	in Pacman:
@@ -33,5 +38,5 @@ General notes about optimization:
 
 TODO:
 	>Collisions
-	>Update Score
+	>Update Score [DONE]
 	>Get level by size and create corresponding array

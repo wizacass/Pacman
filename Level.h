@@ -11,7 +11,7 @@ public:
 	Level(std::string name);
 	~Level();
 
-	void SetPac(int x, int y);
+	void SetPac(int x, int y, int & score);
 	void ClearTile(int x, int y);
 	void Draw();
 

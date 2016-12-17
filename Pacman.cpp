@@ -9,9 +9,6 @@ Pacman::Pacman(int x, int y) :
 	this->_xx = 0;
 	this->_yy = 0;
 
-	pX = this->_x;
-	pY = this->_y;
-
 	std::cout << "Hello! Swagman\n";
 }
 
@@ -53,32 +50,22 @@ void Pacman::Movement()
 	case STOP:
 		this->_xx = 0;
 		this->_yy = 0;
-		pX = this->_x;
-		pY = this->_y;
 		break;
 	case UP:
 		this->_xx = -1;
 		this->_yy = 0;
-		pX = this->_x + 1;
-		pY = this->_y;
 		break;
 	case DOWN:
 		this->_xx = 1;
 		this->_yy = 0;
-		pX = this->_x - 1;
-		pY = this->_y;
 		break;
 	case RIGHT:
 		this->_xx = 0;
 		this->_yy = 1;
-		pX = this->_x;
-		pY = this->_y - 1;
 		break;
 	case LEFT:
 		this->_xx = 0;
 		this->_yy = -1;
-		pX = this->_x;
-		pY = this->_y + 1;
 		break;
 	}
 }
@@ -90,9 +77,6 @@ void Pacman::Check()
 
 void Pacman::Update()
 {
-	pX = this->_x;
-	pY = this->_y;
-
 	this->_x += this->_xx;
 	this->_y += this->_yy;
 }
